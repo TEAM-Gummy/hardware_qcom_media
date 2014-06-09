@@ -106,6 +106,7 @@ LOCAL_ADDITIONAL_DEPENDENCIES  := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 
 include $(BUILD_SHARED_LIBRARY)
 
+ifeq ($(VDEC_TESTS),true)
 # ---------------------------------------------------------------------------------
 # 			Make the apps-test (mm-vdec-omx-test)
 # ---------------------------------------------------------------------------------
@@ -129,6 +130,7 @@ LOCAL_SRC_FILES           += vdec/test/omx_vdec_test.cpp
 LOCAL_ADDITIONAL_DEPENDENCIES  := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 
 include $(BUILD_EXECUTABLE)
+endif
 
 # ---------------------------------------------------------------------------------
 # 			Make the driver-test (mm-video-driver-test)
